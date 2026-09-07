@@ -56,17 +56,28 @@ localhost:5173             localhost:4000
 ```bash
 cd Backend
 python -m venv venv
+```
 
-# Activar entorno virtual
-venv\Scripts\activate        # Windows
-source venv/bin/activate     # macOS / Linux
+Activa el entorno virtual según tu terminal:
 
+| Terminal | Comando |
+|---|---|
+| CMD (Windows) | `venv\Scripts\activate.bat` |
+| PowerShell (Windows) | `venv\Scripts\Activate.ps1` |
+| Git Bash | `source venv/Scripts/activate` |
+| macOS / Linux | `source venv/bin/activate` |
+
+> ⚠️ Si PowerShell da un error de "no se puede cargar el script porque la ejecución de scripts está deshabilitada", corre esto una sola vez y vuelve a intentar: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+
+```bash
 pip install -r requirements.txt
 python seed.py                # crea y llena la base de datos (solo la primera vez)
 python app.py                 # levanta la API en http://localhost:4000
 ```
 
 La base de datos (`database/fidelidad.db`) se crea automáticamente al correr `seed.py`, no requiere ninguna configuración adicional.
+
+> El entorno virtual es opcional para que el proyecto funcione (puedes instalar directo con `pip install -r requirements.txt` sin activar nada), pero se recomienda para no mezclar estas dependencias con otros proyectos de Python en tu máquina.
 
 ### 2. Frontend (React + Vite)
 
