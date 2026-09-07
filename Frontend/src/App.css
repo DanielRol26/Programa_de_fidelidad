@@ -1,0 +1,61 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 10% 20%, rgba(200, 224, 244, 0.45) 0%, rgba(242, 247, 252, 0.9) 60%),
+              radial-gradient(circle at 90% 80%, rgba(157, 209, 241, 0.3) 0%, transparent 50%);
+  padding: 2rem 1rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.app-badge {
+  display: inline-block;
+  background-color: var(--color-ice);
+  color: var(--color-navy);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--color-sky);
+}
+
+.app-title {
+  color: var(--color-navy);
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+
+.app-subtitle {
+  color: var(--color-steel);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.app-main {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Responsiveness for App Layout */
+@media (max-width: 640px) {
+  .app-layout {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .app-header {
+    margin-bottom: 1.5rem;
+  }
+}

@@ -1,0 +1,55 @@
+# =======================================================
+# Entornos Virtuales y Dependencias de Python (Backend)
+# =======================================================
+Backend/venv/
+Backend/env/
+venv/
+env/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Base de datos SQLite generada localmente (se reconstruye con seed.py)
+Backend/database/*.db
+*.db
+*.sqlite3
+
+# =======================================================
+# Dependencias y Build de Node / React (Frontend)
+# =======================================================
+Frontend/node_modules/
+node_modules/
+Frontend/dist/
+Frontend/dist-ssr/
+dist/
+dist-ssr/
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =======================================================
+# Configuraciones de Entorno e IDEs
+# =======================================================
+.env
+.env.local
+.env.*.local
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db

@@ -1,0 +1,321 @@
+/* =========================================================
+   InscripcionForm.css
+   Paleta de colores oficial:
+   - #BA1200 (Rojo Acento)
+   - #031927 (Azul Marino Profundo)
+   - #9DD1F1 (Azul Cielo Claro)
+   - #508AA8 (Azul Acero)
+   - #C8E0F4 (Azul Hielo Suave)
+   ========================================================= */
+
+.form-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-ice);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Barra decorativa superior con el color de acento (#BA1200) */
+.form-top-accent {
+  height: 6px;
+  background: linear-gradient(90deg, #BA1200 0%, #508AA8 100%);
+  width: 100%;
+}
+
+.form-content {
+  padding: 2.25rem 2.5rem;
+}
+
+/* Encabezados de sección */
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.form-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-ice);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-section-title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+/* Grid Layouts para Responsive */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.form-grid-full {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* Campos del formulario */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.form-required {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+/* Inputs y Selects */
+.form-input,
+.form-select {
+  width: 100%;
+  height: 46px;
+  padding: 0 0.95rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--color-navy);
+  background-color: #ffffff;
+  border: 1.5px solid var(--color-input-border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Flecha personalizada para los select */
+.form-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form-select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--color-steel);
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.form-select {
+  padding-right: 2.25rem;
+  cursor: pointer;
+}
+
+/* Estados Focus / Hover */
+.form-input:hover:not(:disabled),
+.form-select:hover:not(:disabled) {
+  border-color: var(--color-steel);
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: var(--color-input-border-focus);
+  box-shadow: 0 0 0 3.5px var(--color-focus-ring);
+  background-color: #ffffff;
+}
+
+/* Estados Deshabilitados */
+.form-input:disabled,
+.form-select:disabled {
+  background-color: var(--color-disabled-bg);
+  border-color: #d7e4ef;
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.form-select-wrapper.disabled::after {
+  border-top-color: var(--color-disabled-text);
+}
+
+.form-hint {
+  font-size: 0.775rem;
+  color: var(--color-steel);
+  margin-top: 0.15rem;
+}
+
+/* Botón de Envío */
+.form-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 50px;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  box-shadow: 0 4px 14px rgba(186, 18, 0, 0.28);
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(186, 18, 0, 0.38);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(186, 18, 0, 0.25);
+}
+
+.submit-btn:disabled {
+  background-color: #9cb1c2;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Spinner de Carga */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mensajes de Feedback */
+.feedback-card {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.925rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.feedback-success {
+  background-color: #eafaf1;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.feedback-error {
+  background-color: rgba(186, 18, 0, 0.08);
+  color: var(--color-accent);
+  border: 1px solid rgba(186, 18, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   Adaptabilidad Responsive (Mobile first / Media Queries)
+   ========================================================= */
+
+/* Tablets y pantallas intermedias */
+@media (max-width: 768px) {
+  .form-content {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+}
+
+/* Dispositivos móviles */
+@media (max-width: 640px) {
+  .form-content {
+    padding: 1.35rem 1rem;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .form-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-input,
+  .form-select {
+    height: 44px;
+    font-size: 0.92rem;
+  }
+
+  .submit-btn {
+    height: 48px;
+    font-size: 1rem;
+  }
+}
