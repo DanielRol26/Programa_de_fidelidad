@@ -34,7 +34,6 @@ function InscripcionForm() {
     const [mensaje, setMensaje] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // Cargar catálogos que NO dependen de nada (una sola vez)
     useEffect(() => {
         getTiposIdentificacion()
             .then((res) => setTipos(res.data || []))
@@ -47,7 +46,6 @@ function InscripcionForm() {
             .catch(() => setPaises([]));
     }, []);
 
-    // Cuando cambia el país, recargar departamentos
     useEffect(() => {
         if (form.pais_id) {
             getDepartamentos(form.pais_id)
@@ -56,7 +54,6 @@ function InscripcionForm() {
         }
     }, [form.pais_id]);
 
-    // Cuando cambia el departamento, recargar ciudades
     useEffect(() => {
         if (form.departamento_id) {
             getCiudades(form.departamento_id)
@@ -89,8 +86,6 @@ function InscripcionForm() {
 
         try {
             const datosParaBackend = { ...form };
-            // pais_id y departamento_id solo son útiles en el frontend (para filtrar
-            // los combos); el backend solo necesita ciudad_id.
             delete datosParaBackend.pais_id;
             delete datosParaBackend.departamento_id;
             await crearInscripcion(datosParaBackend);
@@ -109,7 +104,6 @@ function InscripcionForm() {
         <div className="form-card">
             <div className="form-top-accent" />
             <form className="form-content" onSubmit={handleSubmit}>
-                {/* Sección: Datos Personales e Identificación */}
                 <div className="form-section">
                     <h2 className="form-section-title">Datos Personales</h2>
 
@@ -222,7 +216,6 @@ function InscripcionForm() {
                     </div>
                 </div>
 
-                {/* Sección: Ubicación */}
                 <div className="form-section">
                     <h2 className="form-section-title">Ubicación</h2>
 
@@ -306,7 +299,6 @@ function InscripcionForm() {
                     </div>
                 </div>
 
-                {/* Sección: Preferencias */}
                 <div className="form-section">
                     <h2 className="form-section-title">Marca de Preferencia</h2>
 
@@ -336,7 +328,6 @@ function InscripcionForm() {
                     </div>
                 </div>
 
-                {/* Acciones y feedback */}
                 <div className="form-actions">
                     <button type="submit" className="submit-btn" disabled={isSubmitting}>
                         {isSubmitting ? (

@@ -6,7 +6,7 @@ from models import db, Pais, Departamento, Ciudad, TipoIdentificacion, Marca, In
 import os
 
 app = Flask(__name__)
-CORS(app)  # habilita peticiones desde el frontend (localhost:5173)
+CORS(app)  
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 DB_DIR = os.path.join(BASE_DIR, "database")
@@ -20,8 +20,6 @@ db.init_app(app)
 def home():
     return "<h1>API Programa de Fidelidad</h1>"
 
-
-# ---------- CATÁLOGOS (para llenar los <select>) ----------
 
 @app.route("/api/tipos-identificacion", methods=["GET"])
 def getTiposIdentificacion():
@@ -56,7 +54,7 @@ def getPaises():
 @app.route("/api/departamentos", methods=["GET"])
 def getDepartamentos():
     try:
-        pais_id = request.args.get("pais_id")  # ?pais_id=1
+        pais_id = request.args.get("pais_id")
         query = Departamento.query
         if pais_id:
             query = query.filter_by(pais_id=pais_id)
@@ -70,7 +68,7 @@ def getDepartamentos():
 @app.route("/api/ciudades", methods=["GET"])
 def getCiudades():
     try:
-        departamento_id = request.args.get("departamento_id")  # ?departamento_id=1
+        departamento_id = request.args.get("departamento_id")  
         query = Ciudad.query
         if departamento_id:
             query = query.filter_by(departamento_id=departamento_id)
@@ -81,7 +79,7 @@ def getCiudades():
         return jsonify({"msg": "Ha ocurrido un error"}), 500
 
 
-# ---------- INSCRIPCIONES ----------
+
 
 @app.route("/api/inscripciones", methods=["GET"])
 def getInscripciones():

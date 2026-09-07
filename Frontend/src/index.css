@@ -1,5 +1,4 @@
 :root {
-  /* Paleta de colores solicitada */
   --color-accent: #BA1200;
   --color-accent-hover: #960e00;
   --color-navy: #031927;
@@ -7,7 +6,6 @@
   --color-steel: #508AA8;
   --color-ice: #C8E0F4;
 
-  /* Colores derivados y de apoyo */
   --color-bg-page: #f2f7fc;
   --color-card-bg: #ffffff;
   --color-text-main: #031927;
@@ -18,7 +16,6 @@
   --color-disabled-bg: #eaf2f8;
   --color-disabled-text: #8aa4b7;
 
-  /* Sombras y bordes */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;

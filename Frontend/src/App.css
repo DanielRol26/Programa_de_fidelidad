@@ -49,7 +49,6 @@
   margin: 0 auto;
 }
 
-/* Responsiveness for App Layout */
 @media (max-width: 640px) {
   .app-layout {
     padding: 1.25rem 0.75rem;
